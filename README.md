@@ -7,8 +7,8 @@ Warning: This script blows away any existing flair - so be careful. Save existin
 
 Requires:
  * Pillow ('pip3 install Pillow') 
- * PRAW
- * possibly other image manipulation libraries like libjpeg-dev.
+ * PRAW ('pip3 install praw')
+ * possibly other image manipulation libraries like libjpeg-dev. ('sudo apt-get install libjpeg-dev')
 
 Written in Python 3.
 
