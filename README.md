@@ -51,6 +51,43 @@ Example usage:
 
 This would make three flairs in the -s my_subreddit subreddit named "18xx", "Hanabi", "Foo Bar" with the matching images. 
 
+Add the code from the subreddit.css file to your subreddit's CSS (/r/subredditname/about/stylesheet) before running the script.
+
+That code is pasted here for perusal:
+```javascript
+/*---------------------------------------------
+   Flair
+ ---------------------------------------------*/
+
+.flair {
+    background: url(%%user-flair%%) #F4F5FE no-repeat 2px 20px;
+    padding: 2px 2px 2px 22px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.flair-general, .flair-custom, .flair-unknown { padding-left: 2px; background-image: none; }
+
+.flair-icon-only {
+    border: 0;
+    background-color: transparent;
+    text-indent: -200%;
+    overflow: hidden;
+    padding-left: 18px;
+}
+
+/* Do not change the FLAIR_OFFSET_X comments, the auto-flair 
+   script uses them to know where to paste the flair offset data. */
+/*FLAIR_OFFSET_START*/
+.flair-foo-bar                              { background-position: 2px 2px; }
+/*FLAIR_OFFSET_END*/
+
+.linkflairlabel {
+    font-size: small;
+}
+```
+
+
 Enjoy.
 
 
