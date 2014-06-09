@@ -3,6 +3,8 @@ reddit-flair-tool
 
 A little script to automated creating and updating flair on reddit subreddits.
 
+Warning: This script blows away any existing flair - so be careful. Save existing flair images to the image directory you're going to use. This script (re)creates the flait based solely on the images and filenames it is given.
+
 Requires:
  * Pillow ('pip3 install Pillow') 
  * PRAW
@@ -39,6 +41,15 @@ This script assumes 16x16 images (GIF, PNG, JPG) in the images directory. The fi
 USERNAME = my_reddit_username
 PASSWORD = my_reddit_password
 ```
+
+Example usage:
+```bash
+> ls ./images
+18xx.gif  hanabi.png  foo-bar.gif
+> ./flairTool.py -m mod_uid -p my_password -s my_subreddit -i ./images -l info
+```
+
+This would make three flairs in the -s my_subreddit subreddit named "18xx", "Hanabi", "Foo Bar" with the matching images. 
 
 Enjoy.
 
