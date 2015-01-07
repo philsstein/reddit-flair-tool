@@ -11,14 +11,6 @@
 
 .flair-general, .flair-custom, .flair-unknown { padding-left: 2px; background-image: none; }
 
-.flair-icon-only {
-    border: 0;
-    background-color: transparent;
-    text-indent: -200%;
-    overflow: hidden;
-    padding-left: 18px;
-}
-
 /* Do not change the FLAIR_OFFSET_X comments, the auto-flair 
    script uses them to know where to paste the flair offset data. */
 /*FLAIR_OFFSET_START*/
