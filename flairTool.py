@@ -128,20 +128,12 @@ if __name__ == '__main__':
     logging.basicConfig(format=log_format, datefmt=log_datefmt,
                         level=logLevels[args.loglevel])
     
-    # grab user/pass from command line or account details module.
-    if not args.mod or not args.password:
-        try: 
-            from AccountDetails import USERNAME, PASSWORD
-            args.mod = USERNAME
-            args.password = PASSWORD
-        except ImportError:
-            log.critical('You must specify modid and password via -m and -p or have an '
-                         'AccountDetails.py file in the PYTHONPATH or current directory.')
-            exit(1)
-
     try:
         reddit = praw.Reddit(user_agent=user_agent, decode_html_entities='True')  
-        reddit.login(args.mod, args.password)
+        if args.mod or not args.password:
+            reddit.login(args.mod, args.password)
+        else:
+            reddit.login()  # use $HOME/.config/praw.ini
     except praw.errors.InvalidUserPass:
         log.critical('Unable to log into reddit with account %s and password given.' % args.mod)
         exit(1)
