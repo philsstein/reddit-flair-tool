@@ -35,12 +35,7 @@ optional arguments:
                         (This is mostly used for debugging.)
 ```
 
-This script assumes 16x16 images (GIF, PNG, JPG) in the images directory. The file names should be words separated by dashes. The file names will become the text in the flair selection box with the dashes replaced by spaces and the words capitalized. Ex: filename foo-bar-baz.png will become flair labled with "Foo Bar Baz". The username and password can be passed in on the command line or a file in the $PYTHONPATH named "AccountDetails.py" can be used. The AccountDeatils.py file must declare the username and password as so:
-
-```python
-USERNAME = my_reddit_username
-PASSWORD = my_reddit_password
-```
+This script assumes 16x16 images (GIF, PNG, JPG) in the images directory. The file names should be words separated by dashes. The file names will become the text in the flair selection box with the dashes replaced by spaces and the words capitalized. Ex: filename foo-bar-baz.png will become flair labled with "Foo Bar Baz". The username and password is given via PRAW, so hardcoded in ~/config/praw.config or given on stdin at runtime.
 
 Example usage:
 ```bash
@@ -67,14 +62,6 @@ That code is pasted here for perusal:
 }
 
 .flair-general, .flair-custom, .flair-unknown { padding-left: 2px; background-image: none; }
-
-.flair-icon-only {
-    border: 0;
-    background-color: transparent;
-    text-indent: -200%;
-    overflow: hidden;
-    padding-left: 18px;
-}
 
 /* Do not change the FLAIR_OFFSET_X comments, the auto-flair 
    script uses them to know where to paste the flair offset data. */
